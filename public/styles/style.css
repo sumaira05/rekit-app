@@ -1,0 +1,15 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+:root {
+  --primary-color: '#cccccc';
+  --secondary-color: 'ff0';
+  --text-color: '#4646447';
+}
+
+.sub-heading {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
