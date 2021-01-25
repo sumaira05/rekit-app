@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -13,12 +13,18 @@ export class Footer extends Component {
   render() {
     return (
       <div className="home-footer">
+
         <div>
           <div className="sub-footer-1">
             <span>item 1</span>
             <span>item 2</span>
             <span>item 3</span>
           </div>
+        
+  
+            <h1> welcome Footer page </h1>
+          
+  
 
           <div className="sub-footer-2">
             <span>item 1</span>
@@ -38,17 +44,19 @@ export class Footer extends Component {
 }
 
 /* istanbul ignore next */
-function mapStateToProps(state) {
+/*function mapStateToProps(state) {
   return {
     home: state.home,
   };
 }
 
 /* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
+/*function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators({ ...actions }, dispatch),
+  
   };
+  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

@@ -1,4 +1,19 @@
-export { default as App } from './App';
-export { default as WelcomePage } from './WelcomePage';
-export { default as Header } from './Header';
-export { default as Footer } from './Footer';
+/*export { default as App } from './App';
+export { default as WelcomePage } from './WelcomePage';*/
+
+import React from "react";
+import ReactDom from "react-dom";
+import App from "./App";
+import {BrowserRouter } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+ReactDOM.render(
+
+    <>
+    <BrowserRouter>
+    <App/>
+    </BrowserRouter>
+    </>
+
+)

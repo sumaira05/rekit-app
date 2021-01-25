@@ -1,4 +1,4 @@
-import { WelcomePage } from './';
+import {WelcomePage} from './WelcomePage';
 
 export default {
   path: '',

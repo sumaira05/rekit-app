@@ -1,23 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Footer } from './Footer';
-import { Header } from './Header';
+/*import React from 'react';
+import { Link, Switch,Route } from 'react-router-dom';
+/*import "../node_modules/bootstrap/dist/css/bootstrap.min.css";*/
+/*import { Header } from './Header';
+import {Footer} from './Footer';
+import { Services } from './Services';
+import { About } from './About';
+import { Contact } from './Contact';
+/*
 
 export default function WelcomePage() {
   return (
     <div className="home-welcome-page">
-      <Header />
+        
+    
+    
 
-      <div>somethimng ijtrested ldsjknsdbncjbskjcndjshbacknsdkjc</div>
+      
+    <Switch>
+    <Route exact path="/" component={Header} />
+    <Route  exact path="about" component={About} />
+    <Route  exact path="footer" component={Footer} />
 
-      <div>somethimng ijtrested ldsjknsdbncjbskjcndjshbacknsdkjc</div>
-      <div>somethimng ijtrested ldsjknsdbncjbskjcndjshbacknsdkjc</div>
+    <Route    exact path="/service" component={Services} />
+    <Route  exact path="/ contact" component={Contact} />
+    
+  
+  </Switch>
 
-      <div>somethimng ijtrested ldsjknsdbncjbskjcndjshbacknsdkjc</div>
-
-      <div>somethimng ijtrested ldsjknsdbncjbskjcndjshbacknsdkjc</div>
-
-      <Footer />
+      <Footer></Footer>
     </div>
   );
-}
+}*/
