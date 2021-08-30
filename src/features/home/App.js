@@ -1,38 +1,75 @@
-/*import React from 'react'
-
-export default function App({ children }) {
-  return (
-    <div className="home-app">
-      <div className="page-container">{children}</div>
-    
-    
-</div>
-  );
-}*/
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-
-import Contact from './Contact';
-import Home from './Home';
-import Services from './Services';
-import About from './About';
+import React, { Component } from 'react';
 import Navbar from './Navbar';
+import * as commonActoins from '../common/redux/actions';
+import * as actions from './redux/actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const App = () => {
-  return (
-    <>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/ service" component={Services} />
-        <Route exact path="/contact" component={Contact} />
+class App extends Component {
+  static propTypes = {
+    home: PropTypes.object.isRequired,
+    // actions: PropTypes.object.isRequired,
+    children: PropTypes.node,
+  };
 
-        <Redirect to="/" />
+  static defaultProps = {
+    children: '',
+  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      navItems: [
+        { label: 'Home', active: true },
+        { label: 'Services', active: false },
+        { label: 'Our Team', active: false },
+        { label: 'About us', active: false },
+        { label: 'Conatct us', active: false },
+      ],
+    };
+  }
 
-        <Home />
-      </Switch>
-    </>
-  );
-};
-export default App;
+  onNavItemClick = clickedItem => {
+    console.log('Item clicked is------', clickedItem);
+
+    let newNavItems = [];
+
+    this.state.navItems &&
+      this.state.navItems.map(val => {
+        if (val.label === clickedItem.label) {
+          newNavItems.push({ label: val.label, active: true });
+        } else {
+          newNavItems.push({ label: val.label, active: false });
+        }
+      });
+
+    this.setState({ navItems: newNavItems });
+  };
+
+  render() {
+    return (
+      <div>
+        <Navbar navItems={this.state.navItems} onNavItemClick={this.onNavItemClick} />
+
+        {this.props.children}
+        {/* <Footer /> */}
+      </div>
+    );
+  }
+}
+
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions, ...commonActoins }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

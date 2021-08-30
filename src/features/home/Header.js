@@ -1,4 +1,4 @@
-/*import React, { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -13,8 +13,8 @@ export class Header extends Component {
   render() {
     return (
       <div className="home-header">
-        <img src="/public/images/logo.png" />*/
-        /*<span>Home </span>
+        <img src="/public/images/logo.png" />
+        <span>Home </span>
         <span>About us </span>
         <span>Conatct us </span>
       </div>
@@ -22,18 +22,18 @@ export class Header extends Component {
   }
 }
 
-/* istanbul ignore next */
-/*function mapStateToProps(state) {
+// istanbul ignore next
+function mapStateToProps(state) {
   return {
     home: state.home,
   };
 }
 
-/* istanbul ignore next */
-/*function mapDispatchToProps(dispatch) {
+//  istanbul ignore next
+function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators({ ...actions }, dispatch),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);*/
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
